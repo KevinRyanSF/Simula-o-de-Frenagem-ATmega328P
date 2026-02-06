@@ -1,0 +1,53 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="1" >
+
+<item itemtype="SR04" CircId="SR04-1" mainComp="false" Show_id="false" Show_Val="false" Pos="-324,28" rotation="270" hflip="1" vflip="-1" label="SR04-1" idLabPos="-16,-48" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Voltage Source" CircId="Voltage Source-3" mainComp="false" ShowProp="MaxValue" Show_id="true" Show_Val="true" Pos="-428,-80" rotation="0" hflip="1" vflip="1" label="Distância (m)" idLabPos="-24.5396,-43.6481" labelrot="0" valLabPos="-8,30" valLabRot="0" Running="true" Value_Volt="1.055 V" MaxValue="5 V" MinValue="0 V" />
+
+<item itemtype="MCU" CircId="mega328-5" mainComp="false" Show_id="true" Show_Val="false" Pos="-152,-76" rotation="0" hflip="1" vflip="1" label="mega328-5" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../../../../Documents/Atmel Studio/7.0/Carro_simu/Carro_simu/Debug/Carro_simu.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="false" SerialMon="-1" />
+
+<item itemtype="Switch" CircId="Switch-10" mainComp="false" Show_id="true" Show_Val="false" Pos="-52,-44" rotation="0" hflip="-1" vflip="-1" label="Ré" idLabPos="-2.74939,22.9877" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" DT="false" Poles="1" />
+
+<item itemtype="Ground" CircId="Ground-11" mainComp="false" Show_id="false" Show_Val="false" Pos="-20,-60" rotation="0" hflip="1" vflip="-1" label="Ground-11" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Voltage Source" CircId="Voltage Source-12" mainComp="false" ShowProp="MaxValue" Show_id="true" Show_Val="true" Pos="20,-44" rotation="0" hflip="-1" vflip="1" label="Acelerador" idLabPos="-24.5396,-43.6481" labelrot="0" valLabPos="-6.89591,24.4796" valLabRot="0" Running="true" Value_Volt="5 V" MaxValue="5 V" MinValue="0 V" />
+
+<item itemtype="AudioOut" CircId="AudioOut-14" mainComp="false" Show_id="false" Show_Val="false" Pos="-240,12" rotation="720" hflip="-1" vflip="-1" label="AudioOut-14" idLabPos="-20,-36" labelrot="0" valLabPos="-16,20" valLabRot="0" Buzzer="false" Impedance="11 Ω" Frequency="1 kHz" />
+
+<item itemtype="Ground" CircId="Ground-15" mainComp="false" Show_id="false" Show_Val="false" Pos="-224,-12" rotation="720" hflip="1" vflip="-1" label="Ground-15" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Subcircuit" CircId="L293-17" mainComp="false" Show_id="true" Show_Val="false" Pos="-216,-100" rotation="0" hflip="-1" vflip="-1" label="Ponte H" idLabPos="-0.838749,-13.7894" labelrot="0" valLabPos="-16,20" valLabRot="0" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1e+09 Ω" Out_High_V="12 V" Out_Low_V="0 V" Out_Imped="40 Ω" Tpd_ps="10 ns" Tr_ps="3 ns" Tf_ps="4 ns" Logic_Symbol="true" />
+
+<item itemtype="DcMotor" CircId="DcMotor-18" mainComp="false" Show_id="true" Show_Val="false" Pos="-352,-148" rotation="-90" hflip="1" vflip="-1" label="Motor DC" idLabPos="-45.447,-20.7949" labelrot="90" valLabPos="-14,36" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="5 V" Resistance="100 Ω" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-61" mainComp="false" Show_id="false" Show_Val="false" Pos="-88,24" rotation="270" hflip="1" vflip="1" label="Fixed Voltage-61" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Connector" uid="Connector-1" startpinid="Voltage Source-3-outPin" endpinid="SR04-1-inpin" pointList="-400,-64,-348,-64,-348,-60" />
+
+<item itemtype="Connector" uid="Connector-9" startpinid="Ground-11-Gnd" endpinid="Switch-10-pinP0" pointList="-20,-44,-36,-44" />
+
+<item itemtype="Connector" uid="Connector-18" startpinid="Ground-15-Gnd" endpinid="AudioOut-14-rPin" pointList="-224,4,-224,12" />
+
+<item itemtype="Connector" uid="Connector-81" startpinid="mega328-5-PORTD7" endpinid="SR04-1-trigpin" pointList="-160,28,-276,28" />
+
+<item itemtype="Connector" uid="Connector-92" startpinid="mega328-5-PORTD6" endpinid="AudioOut-14-lPin" pointList="-160,20,-224,20" />
+
+<item itemtype="Connector" uid="Connector-95" startpinid="L293-17-4A" endpinid="mega328-5-PORTD4" pointList="-208,-148,-180,-148,-180,-28,-160,-28" />
+
+<item itemtype="Connector" uid="Connector-96" startpinid="mega328-5-PORTD5" endpinid="L293-17-3A" pointList="-160,12,-188,12,-188,-140,-208,-140" />
+
+<item itemtype="Connector" uid="Connector-105" startpinid="Voltage Source-12-outPin" endpinid="mega328-5-PORTC0" pointList="-8,-28,-112,-28" />
+
+<item itemtype="Connector" uid="Connector-119" startpinid="Fixed Voltage-61-outnod" endpinid="mega328-5-PORTV1" pointList="-88,8,-88,-12,-112,-12" />
+
+<item itemtype="Connector" uid="Connector-120" startpinid="mega328-5-PORTD3" endpinid="L293-17-34EN" pointList="-160,-36,-172,-36,-172,-156,-208,-156" />
+
+<item itemtype="Connector" uid="Connector-126" startpinid="mega328-5-PORTC1" endpinid="Switch-10-switch0pinN" pointList="-112,-36,-68,-36,-68,-44" />
+
+<item itemtype="Connector" uid="Connector-139" startpinid="DcMotor-18-lPin" endpinid="L293-17-4Y" pointList="-352,-188,-276,-188,-276,-148,-256,-148" />
+
+<item itemtype="Connector" uid="Connector-140" startpinid="L293-17-3Y" endpinid="DcMotor-18-rPin" pointList="-256,-140,-276,-140,-276,-108,-352,-108" />
+
+<item itemtype="Connector" uid="Connector-146" startpinid="SR04-1-outpin" endpinid="mega328-5-PORTD2" pointList="-276,36,-268,36,-268,-44,-160,-44" />
+
+</circuit>
